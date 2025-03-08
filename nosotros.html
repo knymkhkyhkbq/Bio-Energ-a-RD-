@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.png">
+    <title>Nosotros - Empresa Innovadora</title>
+    <style>
+        /* Reset y estilos generales */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background-color: #004d40;
+            color: #fff;
+            padding: 20px 0;
+        }
+        header .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            font-size: 2rem;
+            margin-left: 10px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #a7ffeb;
+        }
+        main {
+            background-color: #fff;
+            padding: 40px 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        section h2 {
+            color: #004d40;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #004d40;
+            padding-bottom: 10px;
+        }
+        section p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        .team {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .member {
+            flex: 1 1 250px;
+            background: #f1f1f1;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        footer {
+            background-color: #004d40;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+        }
+        footer p a {
+            color: #a7ffeb;
+            text-decoration: none;
+        }
+        /* Scroll to top button */
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 10px 15px;
+            font-size: 1rem;
+            background-color: #004d40;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            display: none;
+            transition: opacity 0.3s;
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            header .nav-container {
+                flex-direction: column;
+            }
+            nav ul {
+                margin-top: 10px;
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <h1>BioEnergía RD</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="produccion.html">Producción</a></li>
+                    <li><a href="beneficios.html">Beneficios</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <!-- Acerca de Nosotros -->
+            <section id="acerca-de">
+                <h2>Acerca de Nosotros</h2>
+                <p>En BioEnergía RD, nos dedicamos a transformar residuos en energía limpia y renovable.</p>
+                <p> Nuestra industria se especializa en la producción de biocombustibles sostenibles, contribuyendo al desarrollo energético de República Dominicana y al cuidado del medio ambiente.</p>
+            </section>
+            <!-- Misión, Visión y Valores -->
+            <section id="mvv">
+                <h2>Misión, Visión y Valores</h2>
+                <p><strong>Misión</nav>:</strong> Impulsar el desarrollo sostenible mediante la producción de biocombustibles a partir de desechos orgánicos, reduciendo la contaminación y promoviendo el uso de energías limpias en el país.</p>
+                <p><strong>Visión:</strong> Ser la empresa líder en biocombustibles en el Caribe, innovando constantemente en tecnologías energéticas sostenibles y generando un impacto positivo en la economía y el medio ambiente.</p>
+                <p><strong>Valores:</strong> Sostenibilidad: Compromiso con la protección del medio ambiente y el uso eficiente de los recursos.</p>
+                <p>Innovación: Desarrollo continuo de soluciones energéticas eficientes y modernas.</p>
+                <p>Compromiso Social: Contribución al bienestar de la comunidad y generación de empleos verdes.</p>
+                <p>alidad: Producción de biocombustibles de alto rendimiento con los mejores estándares.</p>
+            </section>
+            <!-- Nuestro Equipo -->
+            <section id="equipo">
+                <h2>Nuestro Equipo</h2>
+                <div class="team">
+                    <div class="member">
+                        <img src="Victor.jpg" alt="Nombre del Miembro">
+                        <h3>Victor d. Jesus</h3>
+                        <p>CEO & Fundador</p>
+                    </div>
+                    <div class="member">
+                        <img src="israel.jpg" alt="Nombre del Miembro">
+                        <h3>Israel Josué</h3>
+                        <p> Fundador y Directora de operaciones </p>
+                    </div>
+                    <div class="member">
+                        <img src="steban.jpg" alt="Nombre del Miembro">
+                        <h3>Steban</h3>
+                        <p>Jefe de Energias Renovables</p>
+                    </div>
+                    <!-- Añade más miembros según necesites -->
+                </div>
+            </section>
+            <!-- Llamado a la Acción -->
+            <section id="cta">
+                <h2>¿Listos para innovar?</h2>
+                <p>Únete a la transformación energética. En BioEnergía RD, estamos listos para modernizar el futuro con soluciones sostenibles. ¡Contáctanos y forma parte del cambio!                </p>
+                <p><a href="contacto.html" style="background-color: #004d40; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 3px;">Contáctanos</a></p>
+            </section>
+        </div>
+    </main>
+    <audio autoplay loop>
+        <source src="BioEnergía RD.mp3" type="audio/mp3">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 BioEnergía RD | Diseñado con <a href="https://github.com" target="_blank">GitHub Copilot</a></p>
+        </div>
+    </footer>
+    <button id="scrollTopBtn">Subir</button>
+    <script>
+        // Mostrar/ocultar el botón de scroll
+        const scrollTopBtn = document.getElementById("scrollTopBtn");
+        window.addEventListener("scroll", () => {
+            if (document.documentElement.scrollTop > 150) {
+                scrollTopBtn.style.display = "block";
+            } else {
+                scrollTopBtn.style.display = "none";
+            }
+        });
+        // Función para desplazarse hacia arriba
+        scrollTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+</body>
+</html>

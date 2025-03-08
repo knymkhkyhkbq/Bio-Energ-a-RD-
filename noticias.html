@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias</title>
+    <link rel="icon" href="logo.png">
+    <style>
+        /* Global Styles and Animated Background */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background: none;
+            position: relative;
+            overflow-x: hidden;
+        }
+        /* Animated Gradient Background */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(-45deg, #eafbf3, #ccf2e4, #a6e3d4, #8fdcc3);
+            background-size: 400% 400%;
+            z-index: -3;
+            animation: gradientBG 15s ease infinite;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        /* Fullscreen Canvas for particles */
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+        /* Navigation Bar */
+        nav {
+            background-color: #4CAF50;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1100;
+        }
+        nav .logo {
+            color: #fff;
+            font-size: 1.5em;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        /* Toggle Button (hamburger) */
+        .toggle-menu {
+            display: none;
+            font-size: 1.5em;
+            color: #fff;
+            cursor: pointer;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding:0;
+            display: flex;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #e0ffd1;
+        }
+        /* News Section */
+        .news-container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .news {
+            background-color: #fff;
+            border-left: 10px solid #4CAF50;
+            margin: 20px 0;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s forwards;
+            transition: transform 0.3s ease;
+        }
+        .news:hover { transform: scale(1.02); }
+        .news:nth-of-type(1) { animation-delay: 0.2s; }
+        .news:nth-of-type(2) { animation-delay: 0.4s; }
+        .news:nth-of-type(3) { animation-delay: 0.6s; }
+        .news:nth-of-type(4) { animation-delay: 0.8s; }
+        .news:nth-of-type(5) { animation-delay: 1s; }
+        .news:nth-of-type(6) { animation-delay: 1.2s; }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .news img {
+            max-width: 100%;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            transition: transform 0.5s ease, filter 0.5s ease;
+            filter: brightness(0.9);
+        }
+        .news img:hover {
+            transform: scale(1.05);
+            filter: brightness(1);
+        }
+        .news h2 {
+            color: #4CAF50;
+            margin-top: 0;
+        }
+        .news p { line-height: 1.6; }
+        .read-more {
+            display: inline-block;
+            padding: 10px 15px;
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 3px;
+            transition: background-color 0.3s ease;
+        }
+        .read-more:hover { background-color: #45a049; }
+        .hidden { display: none; }
+        .load-more {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .load-more:hover { background-color: #45a049; }
+        /* Responsive settings for small screens */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .toggle-menu {
+                display: block;
+            }
+            nav ul {
+                flex-direction: column;
+                width: 250px;
+                position: fixed;
+                top: 0;
+                left: -350px;
+                height: 100%;
+                background-color: #4CAF50;
+                padding: 20px;
+                transition: left 0.3s ease;
+                z-index: 1050;
+            }
+            nav ul.active {
+                left: 0;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+            .news {
+                padding: 15px;
+            }
+            .news h2 {
+                font-size: 1.5em;
+            }
+        }
+        /* Responsive settings for large screens */
+        @media (min-width: 1200px) {
+            body {
+                font-size: 1.1em;
+            }
+            .news-container {
+                max-width: 1200px;
+                margin: 30px auto;
+                padding: 0 40px;
+            }
+            nav {
+                padding: 20px 40px;
+            }
+            nav .logo {
+                font-size: 2em;
+            }
+            nav ul li {
+                margin-left: 30px;
+            }
+            .news {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Particles Canvas -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="logo.png" class="logo">Noticias</a>
+        <span class="toggle-menu" id="toggleMenu">&#9776;</span>
+        <ul id="navList">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="produccion.html">Producción</a></li>
+            <li><a href="beneficios.html">Beneficios</a></li>
+            <li><a href="equipo.html">Equipo</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+    
+    <!-- News Container -->
+    <div class="news-container">
+        <div class="news">
+            <img src="noticia1.jpg" alt="Imagen Noticia 1">
+            <h2>Innovación en Biocombustibles: Un Futuro Más Verde</h2>
+            <p>La industria de los biocombustibles avanza con nuevas tecnologías que permiten una producción más eficiente y ecológica.</p>
+            <a class="read-more" href="nosotros.html">Leer más</a>
+        </div>
+        <div class="news">
+            <img src="noticia2.jpg" alt="Imagen Noticia 2">
+            <h2>BioEnergía RD Expande su Producción</h2>
+            <p>Nuestra empresa ha ampliado sus instalaciones para aumentar la capacidad de producción y abastecer a más sectores industriales.</p>
+            <a class="read-more" href="nosotros.html">Leer más</a>
+        </div>
+        <div class="news">
+            <img src="noticia3.jpeg" alt="Imagen Noticia 3">
+            <h2>El Impacto de los Biocombustibles en la Economía Local</h2>
+            <p>Los biocombustibles están impulsando la economía al generar empleo y reducir la dependencia de combustibles fósiles.</p>
+            <a class="read-more" href="nosotros.html">Leer más</a>
+        </div>
+        <audio autoplay loop>
+            <source src="BioEnergía RD.mp3" type="audio/mp3">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+        
+        <!-- Hidden news items -->
+        <div class="news hidden">
+            <img src="noticia4.jpeg" alt="Imagen Noticia 4">
+            <h2>Energía Renovable: Clave para un Desarrollo Sostenible</h2>
+            <p>Expertos destacan la importancia de invertir en energías renovables para mitigar el cambio climático y promover la sostenibilidad.</p>
+            <a class="read-more" href="nosotros.html">Leer más</a>
+        </div>
+        <div class="news hidden">
+            <img src="noticia5.jpg" alt="Imagen Noticia 5">
+            <h2>Avances en la Conversión de Residuos en Energía</h2>
+            <p>Nuevos estudios revelan que los residuos orgánicos pueden ser transformados en energía limpia con mayor eficiencia.</p>
+            <a class="read-more" href="nosotros.html">Leer más</a>
+        </div>
+        <div class="news hidden">
+            <img src="noticia6.jpg" alt="Imagen Noticia 6">
+            <h2>BioEnergía RD Recibe Reconocimiento por Innovación</h2>
+            <p>Hemos sido galardonados por nuestra contribución al desarrollo de energías limpias y sostenibles en República Dominicana.</p>
+            <a class="read-more" href="nosotros.html">Leer más</a>
+        </div>
+        
+        <button class="load-more" id="loadMore">Cargar más noticias</button>
+    </div>
+    
+    <script>
+        // Toggle menu logic for small screens
+        const toggleBtn = document.getElementById('toggleMenu');
+        const navList = document.getElementById('navList');
+        
+        toggleBtn.addEventListener('click', function() {
+            navList.classList.toggle('active');
+        });
+        
+        // Collapse menu when a link is clicked (for small screens)
+        document.querySelectorAll('#navList a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (navList.classList.contains('active')) {
+                    navList.classList.remove('active');
+                }
+            });
+        });
+        
+        // IntersectionObserver for animating news on view
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        
+        document.querySelectorAll('.news').forEach(newsItem => {
+            observer.observe(newsItem);
+        });
+        
+        // Load More button logic
+        document.getElementById('loadMore').addEventListener('click', () => {
+            const hiddenNews = document.querySelectorAll('.news.hidden');
+            hiddenNews.forEach((news, index) => {
+                news.classList.remove('hidden');
+                news.style.animationDelay = (0.8 + index * 0.2) + 's';
+                observer.observe(news);
+            });
+            document.getElementById('loadMore').style.display = 'none';
+        });
+        
+        // Particles Animation
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        const particleCount = 80;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor() {
+                this.radius = Math.random() * 4 + 1;
+                this.x = Math.random() * canvas.width;
+                this.y = canvas.height + Math.random() * canvas.height * 0.5;
+                this.speedY = Math.random() * -1 - 0.5;
+                this.speedX = Math.random() * 0.6 - 0.3;
+                let greenValue = Math.floor(Math.random() * 100 + 155);
+                this.color = `rgba(100, ${greenValue}, 100, ${Math.random() * 0.5 + 0.3})`;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.y + this.radius < 0) {
+                    this.y = canvas.height + this.radius;
+                    this.x = Math.random() * canvas.width;
+                }
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+        }
+        
+        function initParticles() {
+            particles = [];
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+        initParticles();
+        
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+    </script>
+</body>
+</html>

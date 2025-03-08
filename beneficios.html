@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Beneficios</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="icon" href="logo.png">
+    <style>
+        /* Fondo animado con gradiente */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            animation: gradientAnimation 10s ease infinite;
+        }
+        @keyframes gradientAnimation {
+            0% {background: linear-gradient(45deg, #ff9a9e, #fad0c4);}
+            50% {background: linear-gradient(45deg, #a18cd1, #fbc2eb);}
+            100% {background: linear-gradient(45deg, #ff9a9e, #fad0c4);}
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideInUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: transparent;
+            animation: fadeIn 1.5s ease;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            animation: slideInUp 1s ease;
+        }
+        nav {
+            background: linear-gradient(to right, #2e8b5600, #2e8b5600);
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+            transition: background 0.3s ease-in-out;
+            animation: fadeIn 1.2s ease;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            margin: 0 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #000000;
+            transform: translateY(-3px);
+            animation: pulse 0.6s ease;
+        }
+        section.beneficios {
+            padding: 40px;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: slideInUp 1s ease;
+        }
+        section.beneficios h2 {
+            color: #2e8b57;
+            border-bottom: 2px solid #1e6b43;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        section.beneficios p {
+            animation: fadeIn 1s ease;
+        }
+        section.beneficios ul {
+            list-style: none;
+            padding: 0;
+        }
+        section.beneficios ul li {
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #d9ead3;
+            border-left: 5px solid #2e8b57;
+            display: flex;
+            align-items: center;
+            animation: slideInUp 0.8s ease;
+        }
+        section.beneficios ul li::before {
+            content: "✔";
+            color: #2e8b57;
+            margin-right: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2e8b5600;
+            color: white;
+            margin-top: 20px;
+            animation: fadeIn 1s ease;
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            nav ul li {
+                margin: 10px;
+            }
+            section.beneficios {
+                padding: 20px;
+                margin: 10px;
+            }
+        }
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 20px;
+            }
+            nav ul li a {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenedor de partículas y fondo -->
+    <div id="particles-js"></div>
+
+    <header>
+        <h1>Bienvenido a la Sección de Beneficios</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="produccion.html">Producción</a></li>
+                <li><a href="noticias.html"> Noticias</a></li>
+                <li><a href="contacto.html"> Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="beneficios">
+        <h2>Nuestros Beneficios</h2>
+        <p>Explora las ventajas que ofrecemos para potenciar tu experiencia y bienestar. Nos comprometemos a brindarte soluciones sostenibles y efectivas.</p>
+        <ul>
+            <li>Sostenibilidad Ambiental: Contribuimos a un futuro más limpio reduciendo la huella de carbono.</li>
+            <li>Eficiencia Energética: Biocombustibles de alta calidad para un rendimiento óptimo.</li>
+            <li>Impulso Económico: Generamos empleo y fortalecemos la economía local.</li>
+            <li>Innovación Continua: Implementamos tecnología de vanguardia en cada proceso.</li>
+            <li>Compromiso Social: Promovemos el desarrollo de comunidades a través de energías renovables.</li>
+        </ul>
+    </section>
+
+    <audio autoplay loop>
+      <source src="BioEnergía RD.mp3" type="audio/mp3">
+      Tu navegador no soporta el elemento de audio.
+  </audio>
+
+    <footer>
+        <p>© 2025 BioEnergía RD. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Configuración de particles.js -->
+    <script>
+      particlesJS("particles-js", {
+        "particles": {
+          "number": {
+            "value": 80,
+            "density": {
+              "enable": true,
+              "value_area": 800
+            }
+          },
+          "color": {
+            "value": "#ffffff"
+          },
+          "shape": {
+            "type": "circle",
+            "stroke": {
+              "width": 0,
+              "color": "#000000"
+            },
+            "polygon": {
+              "nb_sides": 5
+            }
+          },
+          "opacity": {
+            "value": 0.5,
+            "random": false,
+            "anim": {
+              "enable": false,
+              "speed": 1,
+              "opacity_min": 0.1,
+              "sync": false
+            }
+          },
+          "size": {
+            "value": 3,
+            "random": true,
+            "anim": {
+              "enable": false,
+              "speed": 40,
+              "size_min": 0.1,
+              "sync": false
+            }
+          },
+          "line_linked": {
+            "enable": true,
+            "distance": 150,
+            "color": "#ffffff",
+            "opacity": 0.4,
+            "width": 1
+          },
+          "move": {
+            "enable": true,
+            "speed": 6,
+            "direction": "none",
+            "random": false,
+            "straight": false,
+            "out_mode": "out",
+            "bounce": false,
+            "attract": {
+              "enable": false,
+              "rotateX": 600,
+              "rotateY": 1200
+            }
+          }
+        },
+        "interactivity": {
+          "detect_on": "canvas",
+          "events": {
+            "onhover": {
+              "enable": true,
+              "mode": "repulse"
+            },
+            "onclick": {
+              "enable": true,
+              "mode": "push"
+            },
+            "resize": true
+          },
+          "modes": {
+            "grab": {
+              "distance": 400,
+              "line_linked": {
+                "opacity": 1
+              }
+            },
+            "bubble": {
+              "distance": 400,
+              "size": 40,
+              "duration": 2,
+              "opacity": 8,
+              "speed": 3
+            },
+            "repulse": {
+              "distance": 200,
+              "duration": 0.4
+            },
+            "push": {
+              "particles_nb": 4
+            },
+            "remove": {
+              "particles_nb": 2
+            }
+          }
+        },
+        "retina_detect": true
+      });
+    </script>
+</body>
+</html>

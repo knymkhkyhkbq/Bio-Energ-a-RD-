@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipo</title>
+    <link rel="icon" href="logo.png">
+    <style>
+        /* Fondo animado profesional en tonalidades verdes */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(270deg, #1d1d1c, #56ab2f, #325804);
+            background-size: 600% 600%;
+            animation: gradientAnimation 16s ease infinite;
+            color: #fff;
+        }
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        nav {
+            display: flex;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        nav li {
+            margin-left: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #a8e063;
+        }
+        /* Menu toggle para dispositivos móviles */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                background: rgba(0, 0, 0, 0.8);
+                position: absolute;
+                top: 50px;
+                right: 20px;
+                width: 200px;
+                display: none;
+                border-radius: 5px;
+            }
+            nav ul.active {
+                display: block;
+            }
+            nav li {
+                margin: 10px;
+            }
+            .menu-toggle {
+                display: block;
+                position: absolute;
+                top: 10px;
+                right: 20px;
+            }
+        }
+        /* Sección del equipo */
+        .team-section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .team-section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.2rem;
+            font-weight: 500;
+        }
+        .team-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .team-card {
+            background: rgba(0, 0, 0, 0.65);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+        }
+        .team-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border: 3px solid #56ab2f;
+        }
+        .team-card h3 {
+            margin: 10px 0 5px;
+            font-size: 1.3rem;
+        }
+        .team-card p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        @media (max-width: 768px) {
+            .team-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 500px) {
+            .team-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* Sección de video */
+        .video-section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .video-section h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        .video-section video {
+            max-width: 100%;
+            border: 5px solid #fff;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Equipo</div>
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        <nav>
+            <ul id="nav-list">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="noticias.html">noticias</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="team-section">
+        <h2>Nuestro Equipo</h2>
+        <div class="team-container">
+            <div class="team-card">
+                <img src="Victor.jpg" alt="Persona 1">
+                <h3> Víctor</h3>
+                <p>Rol: (Gerente de Operaciones)</p>
+                <p>Encargado de Todo los movimientos de la Industria.</p>
+            </div>
+            <div class="team-card">
+                <img src="israel.jpg" alt="Persona 2">
+                <h3> Israel</h3>
+                <p>Rol: (Comunicador Social)</p>
+                <p>Mi funcion es comunicar los Avances de la industria.</p>
+            </div>
+            <div class="team-card">
+                <img src="maxwell.jpg" alt="Persona 3">
+                <h3>Maxwell</h3>
+                <p>Rol: (Economista)</p>
+                <p>Mi función es evaluar la viabilidad financiera de la industria.</p>
+            </div>
+            <div class="team-card">
+                <img src="genesis.jpg" alt="Persona 4">
+                <h3>Génesis</h3>
+                <p>Rol: (Especialista en Políticas Públicas)</p>
+                <p>Para mi es fundamental que nuestro proyecto cumpla con todas las regulaciones ambientales</p>
+            </div>
+            <div class="team-card">
+                <img src="franyi.jpg" alt="Persona 5">
+                <h3>Franyi</h3>
+                <p>Rol: (Ayudante de Políticas Públicas)</p>
+                <p>Apoyo en la recopilación de información y redacción de documentos.</p>
+            </div>
+            <div class="team-card">
+                <img src="gustavo.jpg" alt="Persona 6">
+                <h3>Gustavo</h3>
+                <p>Rol: (Ingeniero Industrial)</p>
+                <p> Me encargo de que Nuestro proceso de producción sean  diseñado para ser eficiente y sostenible.</p>
+            </div>
+            <div class="team-card">
+                <img src="cristofer.jpg" alt="Persona 7">
+                <h3>Cristopher </h3>
+                <p>Rol: (Ingeniero Agrónomo)</p>
+                <p>Responsable de seleccionados los desechos  para la producción de biocombustibles.</p>
+            </div>
+            <div class="team-card">
+                <img src="steban.jpg" alt="Persona 8">
+                <h3>Esteban</h3>
+                <p>Rol: (Ingeniero en Energía Renovable)</p>
+                <p>Responsable de reducir nuestra huella de carbono, implementaremos tecnologías de energía renovable.</p>
+            </div>
+            <div class="team-card">
+                <img src="andreina.jpg" alt="Persona 9">
+                <h3>Andreina</h3>
+                <p>Rol: (Analista de Mercado)</p>
+                <p>Responsable de La demanda de biocombustibles.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="video-section">
+        <h2>Video de Presentación</h2>
+        <video controls>
+            <source src="video.mp4" type="video/mp4">
+            Tu navegador no soporta la etiqueta de video.
+        </video>
+    </section>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navList = document.getElementById('nav-list');
+        menuToggle.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
