@@ -1,0 +1,140 @@
+<section id="productos">
+    <div id="particles-js"></div>
+    <div class="container">
+        <h2>🌱 Nuestros Productos</h2>
+        <ul class="productos-lista">
+            <li>
+                <i class="fas fa-gas-pump"></i>
+                <h3>Biodiésel 🚛🔋</h3>
+                <p>Combustible ecológico elaborado a partir de aceites vegetales y grasas animales recicladas.</p>
+            </li>
+            <li>
+                <i class="fas fa-wine-bottle"></i>
+                <h3>Bioetanol 🍶⚡</h3>
+                <p>Alcohol combustible obtenido de fuentes renovables como caña de azúcar y maíz.</p>
+            </li>
+            <li>
+                <i class="fas fa-fire"></i>
+                <h3>Pellets de Biomasa 🔥♻️</h3>
+                <p>Combustible sólido elaborado con residuos agrícolas y forestales, ideal para calefacción y generación de energía.</p>
+            </li>
+            <li>
+                <i class="fas fa-wind"></i>
+                <h3>Biogás 🔋💨</h3>
+                <p>Gas renovable generado a partir de la descomposición de materia orgánica, utilizado para electricidad y calefacción.</p>
+            </li>
+            <li>
+                <i class="fas fa-recycle"></i>
+                <h3>Aceites Reciclados para Energía 🏭♻️</h3>
+                <p>Aceites usados refinados y transformados en materia prima para la producción de biocombustibles.</p>
+            </li>
+            <li>
+                <i class="fas fa-seedling"></i>
+                <h3>Fertilizantes Orgánicos 🌾🌍</h3>
+                <p>Subproductos del proceso de producción que enriquecen el suelo y promueven la agricultura sostenible.</p>
+            </li>
+            <li>
+                <i class="fas fa-filter"></i>
+                <h3>Carbón Activado de Biomasa 🔲⚡</h3>
+                <p>Material filtrante producido a partir de desechos vegetales, ideal para purificación de agua y aire.</p>
+            </li>
+            <li>
+                <i class="fas fa-solar-panel"></i>
+                <h3>Sistemas de Energía Renovable 🌞💡</h3>
+                <p>Equipos y tecnología para el aprovechamiento de fuentes renovables en la industria y el hogar.</p>
+            </li>
+        </ul>
+    </div>
+    <button onclick="window.history.back()" class="volver-btn">Volver</button>
+</section>
+
+<style>
+    #productos {
+        position: relative;
+        padding: 50px 20px;
+        background: linear-gradient(to right, #ffffff, #b3fcbf);
+        text-align: center;
+    }
+    #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    .volver-btn {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #1b5e20;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1em;
+        transition: background-color 0.3s ease;
+    }
+    .volver-btn:hover {
+        background-color: #2e7d32;
+    }
+
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .productos-lista {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+    .productos-lista li {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .productos-lista li:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .productos-lista i {
+        font-size: 40px;
+        color: #2e7d32;
+        margin-bottom: 10px;
+    }
+    h2 {
+        color: #1b5e20;
+        font-size: 2.5em;
+        margin-bottom: 20px;
+    }
+    h3 {
+        margin: 10px 0;
+        color: #1b5e20;
+        font-size: 1.5em;
+    }
+    p {
+        color: #4e342e;
+        font-size: 1em;
+    }
+    @media (max-width: 600px) {
+        .productos-lista {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<!-- Incluir Font Awesome -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+<!-- Incluir particles.js -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+    particlesJS.load('particles-js', 'particles.json', function() {
+        console.log('particles.js loaded - callback');
+    });
+</script>
