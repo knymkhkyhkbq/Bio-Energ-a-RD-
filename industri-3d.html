@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industria 3D - Bio Energía RD</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1d2b64, #f8cdda);
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 2px solid #ccc;
+        }
+        .header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        .description {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.1em;
+            color: #555;
+        }
+        .model-viewer {
+            text-align: center;
+            margin: 20px 0;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 20px auto;
+            background: #1d2b64;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-button:hover {
+            background: #15315b;
+        }
+        @media screen and (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            iframe {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Industria 3D - Bio Energía RD</h1>
+        </div>
+        <div class="description">
+            Explora nuestro modelo 3D interactivo y descubre la innovación en Bio Energía.
+        </div>
+        <div class="model-viewer">
+            <iframe title="BioEnergiaRD"
+                    allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
+                    allow="autoplay; fullscreen; vr"
+                    src="https://sketchfab.com/models/e171ad6999434d4ca17efe96a28fb642/embed">
+            </iframe>
+        </div>
+        <div style="text-align: center;">
+            <a href="index.html" class="back-button">Volver a Inicio</a>
+        </div>
+    </div>
+</body>
+</html>
