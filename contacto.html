@@ -142,18 +142,19 @@
         <div class="contact-info animatable">
             <h2>Ponte en contacto</h2>
             <p>Si tienes alguna consulta o deseas más información, por favor contáctanos. También puedes comunicarte vía teléfono o correo electrónico:</p>
-            <p><i class="fa fa-phone"></i> +1 234 567 890</p>
-            <p><i class="fa fa-envelope"></i> contacto@Bio Energia RD.com</p>
+            <p><i class="fa fa-phone"></i> 829-808-8988</p>
+            <p><i class="fa fa-envelope"></i> bioenergiardoficial@gmail.com</p>
             <p>Encuentra nuestra ubicación en el mapa a continuación.</p>
         </div>
         
         <div class="contact-form animatable">
             <h2>Envíanos un mensaje</h2>
-            <form action="#" method="post">
-                <input type="text" name="nombre" placeholder="Tu nombre" required>
-                <input type="email" name="email" placeholder="Tu correo electrónico" required>
-                <textarea name="mensaje" rows="6" placeholder="Tu mensaje" required></textarea>
-                <button type="submit">Enviar Mensaje</button>
+            <!-- Se ha configurado el formulario para usar mailto. El mensaje se enviará al correo bioenergiardoficial@gmail.com -->
+            <form action="mailto:bioenergiardoficial@gmail.com" method="post" enctype="text/plain">
+            <input type="text" name="nombre" placeholder="Tu nombre" required>
+            <input type="email" name="email" placeholder="Tu correo electrónico" required>
+            <textarea name="mensaje" rows="6" placeholder="Tu mensaje" required></textarea>
+            <button type="submit">Enviar Mensaje</button>
             </form>
         </div>
 
@@ -184,13 +185,6 @@
               });
             }, { threshold: 0.1 });
             animatables.forEach(el => observer.observe(el));
-        });
-
-        // Retroalimentación simple en el envío del formulario
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('¡Mensaje enviado!');
-            this.reset();
         });
     </script>
 </body>
